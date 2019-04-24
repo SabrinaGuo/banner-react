@@ -55,7 +55,7 @@ export default class Banner extends Component {
   };
 
   onClick = () => {
-    this.toggle();
+    this.toggle(); //GO
   };
   render() {
     const { status, btnCls } = this.state;
