@@ -33,6 +33,14 @@ export default class Banner extends Component {
   //   return this.status;
   // };
 
+  // transitionEnd = () => {
+  //   if (this.status === 1) {
+  //     this.status = 2;
+  //   } else if (this.status === 3) {
+  //     this.status = 0;
+  //   }
+  // };
+
   open = () => {
     this.setState({
       status: 2,
@@ -55,7 +63,7 @@ export default class Banner extends Component {
   };
 
   onClick = () => {
-    this.toggle(); //GO
+    this.toggle();
   };
   render() {
     const { status, btnCls } = this.state;

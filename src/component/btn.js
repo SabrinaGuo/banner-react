@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 
 export default class Btn extends Component {
-  
-
-  toggle() {
-   
-  }
+  toggle() {}
 
   render() {
     // console.log(this.props); //button object
@@ -15,11 +11,10 @@ export default class Btn extends Component {
         {
           this.props.button.closeText
           /* {openAtStart === true
-          ? this.props.button.closeText
-          : this.props.button.closeText} */
+        ? this.props.button.closeText
+        : this.props.button.closeText} */
         }
       </div>
     );
-    
   }
 }
