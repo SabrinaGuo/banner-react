@@ -149,7 +149,7 @@ export default class Banner extends Component {
           />
         </a>
         <Btn
-          {...this.state}
+          {...this.state} //React裡面，延展操作符可以在JSX中，{…props}可以將ReactElement的props屬性展開。傳入對象的屬性會被複製到組件內。它能被多次使用，也可以和其它屬性一起用。注意順序很重要，後面的會覆蓋掉前面的。
           toggle={() => this.toggle()}
           txt={
             status === 0 || status === 4
