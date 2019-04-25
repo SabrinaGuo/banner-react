@@ -7,14 +7,14 @@ import "./style.css";
 function BannerReact() {
   return (
     <Banner
-      openAtStart={true}
+      openAtStart={false}
       autoToggle={true} // number || boolean (幾秒開合 || 是否自動開關)
       button={{
         closeText: "收合",
         openText: "展開",
         class: "btn"
       }}
-      transition={false}
+      transition={true}
       whentransition={function() {
         console.log("whenTransition");
       }}

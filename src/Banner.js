@@ -33,7 +33,8 @@ export default class Banner extends Component {
   timeOut = ""; //存settimeout
 
   //設定autoToggle
-  autoToggle() {
+  componentDidMount() {
+    //僅執行一次
     let autoToggle = this.props.autoToggle;
     if (autoToggle === Number) {
       this.timeOut = setTimeout(function() {
@@ -44,6 +45,12 @@ export default class Banner extends Component {
         this.toggle();
       }, 2 * 1000);
     }
+
+    //提醒在這邊綁定DOM eventListener，記得在willUnMount取消綁定EventListener，如果重新render元件會再次執行DidMount，造成過多的綁定事件。
+  }
+
+  componentWillUnmount() {
+    clearTimeout(this.timeOut);
   }
 
   //計時whentransition
@@ -71,7 +78,7 @@ export default class Banner extends Component {
 
     // let status = "";
     // this.setState({
-    //   status //2
+    //   status :2
     // });
   }
 
@@ -90,7 +97,7 @@ export default class Banner extends Component {
 
     // let status = "";
     // this.setState({
-    //   status = 0 //?
+    //   status : 0 //?
     // });
   }
 
@@ -125,7 +132,8 @@ export default class Banner extends Component {
     let status = this.state.status;
     let transtion = this.props.transition ? "transition" : "";
     console.log(this.state.status);
-    console.log(this.props.openAtStart);
+    // console.log(this.props.openAtStart);
+    // this.autoToggle(); //瘋狂一直重新執行
     return (
       <div
         className={`banner ${transtion} ${this.statusArrey[status]} `}
