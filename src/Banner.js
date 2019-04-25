@@ -76,9 +76,9 @@ export default class Banner extends Component {
       status
     });
 
-    // let status = "";
+    // let status;
     // this.setState({
-    //   status :2
+    //   status: 2
     // });
   }
 
@@ -95,9 +95,9 @@ export default class Banner extends Component {
       status
     });
 
-    // let status = "";
+    // let status;
     // this.setState({
-    //   status : 0 //?
+    //   status: 0
     // });
   }
 

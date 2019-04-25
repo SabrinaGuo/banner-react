@@ -7,8 +7,8 @@ import "./style.css";
 function BannerReact() {
   return (
     <Banner
-      openAtStart={false}
-      autoToggle={true} // number || boolean (幾秒開合 || 是否自動開關)
+      openAtStart={true}
+      autoToggle={false} // number || boolean (幾秒開合 || 是否自動開關)
       button={{
         closeText: "收合",
         openText: "展開",
