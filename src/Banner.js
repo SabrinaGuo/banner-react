@@ -34,7 +34,7 @@ export default class Banner extends Component {
 
   //設定autoToggle
   componentDidMount() {
-    //僅執行一次
+    //僅在初始執行一次
     let autoToggle = this.props.autoToggle;
     if (autoToggle === Number) {
       this.timeOut = setTimeout(function() {
@@ -46,7 +46,8 @@ export default class Banner extends Component {
       }, 2 * 1000);
     }
 
-    //提醒在這邊綁定DOM eventListener，記得在willUnMount取消綁定EventListener，如果重新render元件會再次執行DidMount，造成過多的綁定事件。
+    //提醒在這邊綁定DOM eventListener，記得在willUnMount取消綁定EventListener，
+    //如果重新render元件會再次執行DidMount，造成過多的綁定事件。
   }
 
   componentWillUnmount() {
@@ -84,7 +85,7 @@ export default class Banner extends Component {
 
   close() {
     let status = "";
-    console.log(status);
+    // console.log(status);
     if (this.props.transition) {
       this.intervalTime(); //whentransition start
       status = this.nextStatus(); //已由2-> 3 因監聽transitiony再跳轉至onTransitionEnd()
@@ -122,7 +123,7 @@ export default class Banner extends Component {
   }
   onTransitionEnd = () => {
     let status = this.nextStatus(); //當擁有transition的時候由open/close()跳轉至此 原先為1/3 加為 2/4(0) ing->ed
-    clearInterval(this.interVTime); //監聽完後關閉 whentransition
+    clearInterval(this.interVTime); //監聽完後停止setInterval 關閉 whentransition
     this.setState({
       status
     });
@@ -131,7 +132,7 @@ export default class Banner extends Component {
   render() {
     let status = this.state.status;
     let transtion = this.props.transition ? "transition" : "";
-    console.log(this.state.status);
+    // console.log(this.state.status);
     // console.log(this.props.openAtStart);
     // this.autoToggle(); //瘋狂一直重新執行
     return (
